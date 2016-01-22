@@ -2,7 +2,6 @@ package org.usfirst.frc.team2976.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
-
 import org.usfirst.frc.team2976.robot.commands.ExampleCommand;
 
 /**
@@ -11,23 +10,29 @@ import org.usfirst.frc.team2976.robot.commands.ExampleCommand;
  */
 public class OI {
 	
-	/* 
-	 * Joystick(port 0) = xbox controller on PC usb port 0
-	 * Joystick(port 1) = xbox controller on PC usb port 1
-	 * Joystick(port 3) = logitech joystick on PC usb port 3
-	 * Joystick(port 4) = logitech joystick on PC usb port 4
-	 * */
-	
-	public static Joystick LeftJoyStick = new Joystick(3);
-	public static Joystick RightJoyStick = new Joystick(4);
-	
+	//public static Joystick ArcadeJoyStick = new Joystick(0);
+	public static Joystick LeftJoyStick = new Joystick(0);
+	public static Joystick RightJoyStick = new Joystick(1);
+
+	public enum Button {
+		RBumper(1), RTrigger(2), LBumper(3), LTrigger(4), A(5), B(6), X(3), Y(8);
+
+		private final int number;
+
+		Button(int number) {
+			this.number = number;
+		}
+
+		public int getBtnNumber() {
+			return number;
+		}
+	}
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
     // number it is.
     // Joystick stick = new Joystick(port);
     // Button button = new JoystickButton(stick, buttonNumber);
-
     
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
